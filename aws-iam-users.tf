@@ -1,4 +1,4 @@
-resource "aws_iam_user" "prj-user" {
+resource "aws_iam_user" "prj-username" {
 	name = "iam-usr-${var.prj-ecosystem}-${var.prj-application}"
 	#(Required) The user's name.
 	
