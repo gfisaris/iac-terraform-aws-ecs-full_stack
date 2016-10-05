@@ -1,5 +1,5 @@
 resource "aws_iam_user" "prj-username" {
-	name = "iam-usr-${var.prj-ecosystem}-${var.prj-application}"
+	name = "iam-usr-${var.prj_ecosystem}-${var.prj_application}"
 	#(Required) The user's name.
 	
 	#path =
