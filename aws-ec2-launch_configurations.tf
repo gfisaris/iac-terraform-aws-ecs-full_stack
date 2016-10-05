@@ -1,35 +1,30 @@
-resource "aws_launch_configuration" "prj-ec2_launch_conf" {
+resource "aws_launch_configuration" "node-lcf" {
 
 	###########################
 	##  Required Parameters  ##
 	###########################
-	
-    image_id = "${data.aws_ami.centos7_ami.id}"
-	#(Required) The EC2 image ID to launch.
-	
-    instance_type = "t2.micro"
-	#(Required) The size of instance to launch.
 
+	image_id = "${data.aws_ami.centos7_ami.id}"
+	#(Required) The EC2 image ID to launch.
+
+	instance_type = "t2.micro"
+	#(Required) The size of instance to launch.
 
 	###########################
 	##  Optional Parameters  ##
 	###########################
-	
-	
-    name = "ec2-lc-${var.project_ecosystem}-${var.project_webapplication}"
+
+	name = "ec2-lc-${var.prj-ecosystem}-${var.prj-application}"
 	#(Optional) The name of the launch configuration. If you leave this blank, Terraform will auto-generate a unique name.
-	
-	
-	key_name = "${aws_key_pair.prj-ec2_key_pair.key_name}"
+
+	key_name = "${aws_key_pair.prj-user_keypair.key_name}"
 	#(Optional) The key name that should be used for the instance.
 	
 	#iam_instance_profile = ""
 	#(Optional) The IAM instance profile to associate with launched instances.
 	
-	
 	user_data = "${template_file.ec2_instance-userdata.rendered}"
-	#(Optional) The user data to provide when launching the instance.
-	
+	#(Optional) The user data to provide when launching the instance.	
 	
 	#root_block_device
 	#(Optional) Customize details about the root block device of the instance. See Block Devices below for details.
@@ -48,7 +43,6 @@ resource "aws_launch_configuration" "prj-ec2_launch_conf" {
 	#	#(Optional) Whether the volume should be destroyed on instance termination (Default: true).
 	#
 	#}
-	
 	
 	#ebs_block_device
 	#(Optional) Additional EBS block devices to attach to the instance. See Block Devices below for details.
@@ -89,22 +83,16 @@ resource "aws_launch_configuration" "prj-ec2_launch_conf" {
 	#
 	#}
 	
-	
 	#security_groups = ""
 	#(Optional) A list of associated security group IDS.
 		
 	#associate_public_ip_address = ""
 	#(Optional) Associate a public ip address with an instance in a VPC.
 	
-	
 	#ebs_optimized = ""
 	#(Optional) If true, the launched EC2 instance will be EBS-optimized.
 	
 	#enable_monitoring = ""
 	#(Optional) Enables/disables detailed monitoring. This is enabled by default.
-	
-	
-    #lifecycle {
-    #  create_before_destroy = true
-    #}
+
 }
