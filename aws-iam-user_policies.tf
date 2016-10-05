@@ -1,5 +1,5 @@
 resource "aws_iam_user_policy" "allow-ec2-describe-all" {
-	name = "iam-cup-ec2-${var.project_ecosystem}-${var.project_webapplication}"
+	name = "iam-cup-ec2-${var.prj-ecosystem}-${var.prj-application}"
 	#(Required) Name of the policy.
 	
 	user = "${aws_iam_user.prj-user.name}"
