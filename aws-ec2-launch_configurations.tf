@@ -20,7 +20,7 @@ resource "aws_launch_configuration" "node-lcf" {
 	key_name = "${aws_key_pair.prj-user_keypair.key_name}"
 	#(Optional) The key name that should be used for the instance.
 	
-	#iam_instance_profile = ""
+	iam_instance_profile = "${aws_iam_user.prj-username.name}"
 	#(Optional) The IAM instance profile to associate with launched instances.
 	
 	user_data = "${template_file.ec2_instance-userdata.rendered}"
