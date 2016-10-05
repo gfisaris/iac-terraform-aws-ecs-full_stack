@@ -12,7 +12,7 @@ resource "aws_autoscaling_notification" "asg" {
 		"autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
 	]
 	
-	topic_arn = "${aws_sns_topic.asg.arn}"
+	topic_arn = "${aws_sns_topic.asg_notifications.arn}"
 	#(Required) The Topic ARN for notifications to be sent through
 	
 }
