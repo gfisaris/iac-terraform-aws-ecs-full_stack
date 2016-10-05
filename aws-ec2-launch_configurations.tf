@@ -14,7 +14,7 @@ resource "aws_launch_configuration" "node-lcf" {
 	##  Optional Parameters  ##
 	###########################
 
-	name = "ec2-lc-${var.prj-ecosystem}-${var.prj-application}"
+	name = "ec2-lc-${var.prj_ecosystem}-${var.prj_application}"
 	#(Optional) The name of the launch configuration. If you leave this blank, Terraform will auto-generate a unique name.
 
 	key_name = "${aws_key_pair.prj-user_keypair.key_name}"
