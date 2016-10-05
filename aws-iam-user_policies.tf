@@ -1,8 +1,8 @@
 resource "aws_iam_user_policy" "allow-ec2-describe-all" {
-	name = "iam-cup-ec2-${var.prj-ecosystem}-${var.prj-application}"
+	name = "iam-cup-ec2-${var.prj_ecosystem}-${var.prj_application}"
 	#(Required) Name of the policy.
 	
-	user = "${aws_iam_user.prj-user.name}"
+	user = "${aws_iam_user.prj-username.name}"
 	#(Required) IAM user to which to attach this policy.
 		
 	#policy =
