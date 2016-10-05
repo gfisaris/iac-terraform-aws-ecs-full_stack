@@ -50,3 +50,26 @@ variable "ecs_cluster_name" {
     description = "The name of the Amazon ECS cluster."
     default = "main"
 }
+
+
+## Project's Information Variables
+
+variable "project_name" {
+    description = "Name of the Project for which the Infrastructure is about | (Example: GEMv2.GLM.app || HTTP || PROD)"
+}
+
+variable "prj_application" {
+    description = "Name of the Web Application | (Example: glm-app) | Alphanumeric characters, hyphens (-), and underscores (_) are allowed."
+}
+
+variable "prj_ecosystem" {
+    description = "Name of the Ecosystem, the Web Application is part of | [Valid Values: gemv1 / gemv2]"
+}
+
+variable "prj_interface" {
+    description = "Which interface will the Web Application be used through | [Valid Values: http / cli]"
+}
+
+variable "prj_environment" {
+    description = "On which Environment will the Web Application be launched | [Valid Values: prod | beta | stg]"
+}
